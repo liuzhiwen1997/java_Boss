@@ -1,7 +1,0 @@
-chromedirver放桌面
-
-先卸载掉本机google
-
-安装google-chrome-1030506053这个安装包的google
-
-然后看图片里面的把google的兼容模式改一下，别让google自动更新
