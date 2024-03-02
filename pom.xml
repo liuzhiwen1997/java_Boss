@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>org.stark</groupId>
-    <artifactId>get-jobs-boss</artifactId>
+    <artifactId>java_boss</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
