@@ -24,14 +24,14 @@ public class ResumeSubmission {
     static Integer maxPage = 10;
     static String loginUrl = "https://www.zhipin.com/web/user/?ka=header-login";
     static String baseUrl = "https://www.zhipin.com/web/geek/job?query=软件测试&city=101280600&page=";
-     WebDriver driver = new ChromeDriver();
-     WebDriverWait wait15s = new WebDriverWait(driver, 15000);
+    WebDriver driver = new ChromeDriver();
+    WebDriverWait wait15s = new WebDriverWait(driver, 15000);
     static List<String> returnList = new ArrayList<>();
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","C:\\chromedriver\\chromedriver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\chromedriver\\chromedriver.exe");
         Date sdate = new Date();
-        ResumeSubmission resumeSubmission =new ResumeSubmission();
+        ResumeSubmission resumeSubmission = new ResumeSubmission();
         resumeSubmission.login();
         for (int i = page; i <= maxPage; i++) {
             log.info("第{}页", i);
@@ -51,7 +51,7 @@ public class ResumeSubmission {
     }
 
     @SneakyThrows
-    private  Integer resumeSubmission(String url) {
+    private Integer resumeSubmission(String url) {
 
         driver.get(url);
         wait15s.until(ExpectedConditions.presenceOfElementLocated(
@@ -87,7 +87,7 @@ public class ResumeSubmission {
     }
 
     @SneakyThrows
-    private  void login() {
+    private void login() {
         driver.get(loginUrl);
         wait15s.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[class*='btn" +
                 "-sign-switch ewm-switch']")));
@@ -97,5 +97,3 @@ public class ResumeSubmission {
         Thread.sleep(5000);
     }
 }
-
-
