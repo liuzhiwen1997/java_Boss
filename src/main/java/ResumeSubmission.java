@@ -45,7 +45,8 @@ public class ResumeSubmission {
                 ((edate.getTime() - sdate.getTime()) / 1000) / 60);
 
         if (EnableNotifications) {
-            new TelegramNotificationBot().sendMessageWithList("共投递" + returnList.size() + "个简历,用时" + ((edate.getTime() - sdate.getTime()) / 1000) / 60 + "分", returnList, "Boss直聘投递");
+            new TelegramNotificationBot().sendMessageWithList("共投递" + returnList.size() + "个简历,用时" +
+                    ((edate.getTime() - sdate.getTime()) / 1000) / 60 + "分", returnList, "Boss直聘投递");
         }
         resumeSubmission.driver.close();
     }
