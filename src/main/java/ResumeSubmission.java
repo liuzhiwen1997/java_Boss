@@ -45,8 +45,7 @@ public class ResumeSubmission {
                 ((edate.getTime() - sdate.getTime()) / 1000) / 60);
 
         if (EnableNotifications) {
-            new TelegramNotificationBot().sendMessageWithList("共投递" + returnList.size() + "个简历,用时" +
-                    ((edate.getTime() - sdate.getTime()) / 1000) / 60 + "分", returnList, "Boss直聘投递");
+            new TelegramNotificationBot().sendMessageWithList("共投递" + returnList.size() + "个简历,用时" + ((edate.getTime() - sdate.getTime()) / 1000) / 60 + "分", returnList, "Boss直聘投递");
         }
         resumeSubmission.driver.close();
     }
@@ -94,8 +93,6 @@ public class ResumeSubmission {
                 "-sign-switch ewm-switch']")));
         driver.findElement(By.cssSelector("[class*='btn-sign-switch ewm-switch']")).click();
         log.info("等待登陆..");
-//        wait15s.until(ExpectedConditions.presenceOfElementLocated(By.className("resume-catalogue")));
-        Thread.sleep(5000);
+        wait15s.until(ExpectedConditions.presenceOfElementLocated(By.className("resume-catalogue")));
     }
 }
-//zhushi
