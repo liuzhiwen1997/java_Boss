@@ -92,7 +92,10 @@ public class ResumeSubmission {
         wait15s.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[class*='btn" +
                 "-sign-switch ewm-switch']")));
         driver.findElement(By.cssSelector("[class*='btn-sign-switch ewm-switch']")).click();
-        log.info("等待登陆..");
-        wait15s.until(ExpectedConditions.presenceOfElementLocated(By.className("resume-catalogue")));
+
+        log.info("等待登陆,请在10秒内完成扫码..");
+        Thread.sleep(10000);
+
+//        wait15s.until(ExpectedConditions.presenceOfElementLocated(By.className("job-detail-op clearfix")));
     }
 }
